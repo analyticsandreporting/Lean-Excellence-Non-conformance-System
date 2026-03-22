@@ -3,29 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>İnsidence Bildirimi - Arvato</title>
+<title>LENS · Insidence Bildirimi · Arvato</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="theme-color" content="#D97706">
+<meta name="theme-color" content="#0078BE">
 <style>
 :root{
-  --ins:#D97706;--ins-dark:#B45309;--ins-light:#FEF3C7;--ins-mid:#FDE68A;
-  --green:#15803D;--green-light:#DCFCE7;
+  --arvato:#0078BE;--arvato-dark:#005A8E;--arvato-light:#E6F3FB;
+  --green:#15803D;--green-light:#DCFCE7;--green-mid:#86EFAC;
   --red:#B91C1C;--red-light:#FEF0EE;--red-mid:#FCA5A5;
+  --amber:#B45309;--amber-light:#FEF3C7;
   --text:#0D1F2D;--text-soft:#64748B;--text-hint:#94A3B8;
-  --bg:#F8F4EE;--surface:#FFFFFF;--border:#DDE3EC;--border-light:#EEF1F5;
+  --bg:#F0F4F8;--surface:#FFFFFF;--border:#DDE3EC;--border-light:#EEF1F5;
   --r:12px;--rs:8px;
   --shadow:0 1px 3px rgba(0,40,100,.08),0 4px 12px rgba(0,40,100,.05);
 }
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 body{font-family:'Inter',sans-serif;background:var(--bg);min-height:100vh;display:flex;align-items:flex-start;justify-content:center;padding:0}
 .app{width:100%;max-width:430px;min-height:100vh;background:var(--surface);display:flex;flex-direction:column;position:relative}
-@media(min-width:500px){body{padding:24px 0 48px;background:#2D1A0A}.app{min-height:700px;border-radius:24px;box-shadow:0 32px 80px rgba(0,0,0,.3)}}
+@media(min-width:500px){body{padding:24px 0 48px;background:#1A2E44}.app{min-height:700px;border-radius:24px;box-shadow:0 32px 80px rgba(0,0,0,.3)}}
 .screen{display:none;flex-direction:column;flex:1;animation:fu .2s ease}
 .screen.active{display:flex}
 @keyframes fu{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-.topbar{background:var(--ins);padding:14px 16px 12px;display:flex;align-items:center;gap:12px;flex-shrink:0}
+.topbar{background:var(--arvato);padding:14px 16px 12px;display:flex;align-items:center;gap:12px;flex-shrink:0}
 .topbar-back{width:32px;height:32px;background:rgba(255,255,255,.15);border:none;border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .topbar-back:hover{background:rgba(255,255,255,.25)}
 .topbar-info{flex:1;min-width:0}
@@ -35,35 +36,33 @@ body{font-family:'Inter',sans-serif;background:var(--bg);min-height:100vh;displa
 .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;box-shadow:var(--shadow)}
 .card-label{font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--text-soft);margin-bottom:10px}
 input,textarea,select{font-family:'Inter',sans-serif;font-size:13px;color:var(--text);background:var(--bg);border:1px solid var(--border);border-radius:var(--rs);padding:11px 13px;width:100%;outline:none;transition:all .2s}
-input:focus,textarea:focus,select:focus{border-color:var(--ins);background:#fff;box-shadow:0 0 0 3px rgba(217,119,6,.12)}
+input:focus,textarea:focus,select:focus{border-color:var(--arvato);background:#fff;box-shadow:0 0 0 3px rgba(0,120,190,.1)}
 .platform-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .platform-card{background:var(--bg);border:1.5px solid var(--border);border-radius:var(--r);padding:12px 10px;cursor:pointer;text-align:center;transition:all .15s;display:flex;flex-direction:column;align-items:center;gap:5px}
-.platform-card:hover{border-color:var(--ins);background:var(--ins-light);transform:translateY(-1px)}
-.platform-card .pc-id{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;color:#fff;background:var(--ins);padding:2px 8px;border-radius:99px}
+.platform-card:hover{border-color:var(--arvato);background:var(--arvato-light);transform:translateY(-1px)}
+.platform-card .pc-id{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;color:#fff;background:var(--arvato);padding:2px 8px;border-radius:99px}
 .platform-card .pc-name{font-size:11px;font-weight:600;color:var(--text);line-height:1.3}
 .alan-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
 .alan-btn{background:var(--bg);border:1.5px solid var(--border);border-radius:var(--rs);padding:10px 8px;cursor:pointer;text-align:center;font-family:'Inter',sans-serif;font-size:12px;font-weight:500;color:var(--text-soft);transition:all .15s}
-.alan-btn.sel{border-color:var(--ins);background:var(--ins-light);color:var(--ins);font-weight:700}
+.alan-btn.sel{border-color:var(--arvato);background:var(--arvato-light);color:var(--arvato);font-weight:700}
 .dept-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px}
 .dept-btn{background:var(--bg);border:1.5px solid var(--border);border-radius:var(--rs);padding:9px 6px;cursor:pointer;text-align:center;font-family:'Inter',sans-serif;font-size:11px;font-weight:500;color:var(--text-soft);transition:all .15s;line-height:1.3}
-.dept-btn.sel{border-color:var(--ins);background:var(--ins-light);color:var(--ins);font-weight:700}
+.dept-btn.sel{border-color:var(--arvato);background:var(--arvato-light);color:var(--arvato);font-weight:700}
 .onc-row{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:5px}
-.onc-btn{padding:8px 4px;border-radius:6px;border:1.5px solid var(--border);background:var(--bg);font-family:'Inter',sans-serif;font-size:11px;font-weight:600;cursor:pointer;color:var(--text-soft);transition:all .15s}
-.onc-btn.sel{background:var(--ins);border-color:var(--ins);color:#fff}
+.onc-btn{padding:8px 4px;border-radius:6px;border:1.5px solid var(--border);background:var(--bg);font-family:'Inter',sans-serif;font-size:11px;font-weight:600;cursor:pointer;color:var(--text-soft)}
+.onc-btn.sel{background:var(--arvato);border-color:var(--arvato);color:#fff}
 .onc-btn[data-val="Kritik"]{border-color:#B91C1C;color:#B91C1C}
 .onc-btn[data-val="Kritik"].sel{background:#B91C1C;border-color:#B91C1C;color:#fff}
-.foto-upload{border:2px dashed var(--ins-mid);border-radius:var(--r);padding:28px 20px;display:flex;flex-direction:column;align-items:center;gap:12px;background:var(--ins-light);cursor:pointer;transition:all .15s}
-.foto-upload:hover{border-color:var(--ins)}
-.foto-ok{border:2px solid var(--green);border-radius:var(--r);padding:14px;display:flex;align-items:center;gap:12px;background:var(--green-light)}
+.foto-upload{border:2px dashed var(--border);border-radius:var(--r);padding:22px 20px;display:flex;flex-direction:column;align-items:center;gap:10px;background:var(--arvato-light);cursor:pointer;transition:all .15s}
+.foto-upload:hover{border-color:var(--arvato)}
 .btn{width:100%;padding:14px;border-radius:var(--rs);font-family:'Inter',sans-serif;font-size:14px;font-weight:600;cursor:pointer;border:none;transition:all .15s}
-.btn-primary{background:var(--ins);color:#fff;box-shadow:0 4px 12px rgba(217,119,6,.3)}
-.btn-primary:hover{background:var(--ins-dark)}
+.btn-primary{background:var(--arvato);color:#fff;box-shadow:0 4px 12px rgba(0,120,190,.3)}
+.btn-primary:hover{background:var(--arvato-dark)}
 .btn-primary:disabled{opacity:.5;cursor:not-allowed}
 .btn-secondary{background:var(--surface);color:var(--text);border:1px solid var(--border)}
-.btn-success{background:#15803D;color:#fff}
 .step-indicator{display:flex;align-items:center;justify-content:center;gap:6px;padding:12px 0 4px}
 .step-dot{width:8px;height:8px;border-radius:50%;background:var(--border);transition:all .3s}
-.step-dot.active{background:var(--ins);transform:scale(1.3)}
+.step-dot.active{background:var(--arvato);transform:scale(1.3)}
 .step-dot.done{background:var(--green)}
 .success-icon{width:72px;height:72px;background:var(--green-light);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto;font-size:36px}
 #toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(80px);background:#0D1F2D;color:#fff;font-size:13px;font-weight:500;padding:12px 22px;border-radius:99px;transition:all .3s cubic-bezier(.34,1.56,.64,1);z-index:100;white-space:nowrap;box-shadow:0 8px 24px rgba(0,0,0,.25);max-width:90vw;text-align:center}
@@ -76,11 +75,11 @@ input:focus,textarea:focus,select:focus{border-color:var(--ins);background:#fff;
 
 <!-- S0: BİLDİREN KİŞİ -->
 <div class="screen active" id="s0">
-  <div style="background:var(--ins);padding:40px 20px 28px;display:flex;flex-direction:column;align-items:center;gap:14px">
-    <div style="background:#fff;border-radius:10px;padding:8px 20px"><span style="font-size:22px;font-weight:700;color:var(--ins)">arvato</span></div>
+  <div style="background:var(--arvato);padding:40px 20px 28px;display:flex;flex-direction:column;align-items:center;gap:14px">
+    <div style="background:#fff;border-radius:10px;padding:8px 20px"><span style="font-size:22px;font-weight:700;color:var(--arvato)">arvato</span></div>
     <div style="text-align:center">
-      <div style="font-size:18px;font-weight:700;color:#fff">İnsidence Bildirimi</div>
-      <div style="font-size:11px;color:rgba(255,255,255,.65);margin-top:4px">Anlık Sorun & Arıza Bildirimi</div>
+      <div style="font-size:18px;font-weight:700;color:#fff">Insidence Bildirimi</div>
+      <div style="font-size:11px;color:rgba(255,255,255,.65);margin-top:4px">Anlık Sorun &amp; Arıza Bildirimi</div>
     </div>
     <div style="background:rgba(255,255,255,.15);border-radius:10px;padding:10px 16px;text-align:center">
       <div style="font-size:11px;color:rgba(255,255,255,.8)">Sahada bir sorun mu fark ettiniz?</div>
@@ -90,13 +89,12 @@ input:focus,textarea:focus,select:focus{border-color:var(--ins);background:#fff;
   <div class="body" style="justify-content:center">
     <div class="card">
       <div class="card-label">Adınız Soyadınız</div>
-      <input type="text" id="bildirenAd" placeholder="Adınızı girin" style="margin-bottom:4px">
-      <div style="font-size:11px;color:var(--text-hint);margin-bottom:14px">Giriş zorunlu değildir, ama takip için önerilir.</div>
+      <input type="text" id="bildirenAd" placeholder="Sicil no veya adınızı girin" style="margin-bottom:14px">
       <button class="btn btn-primary" onclick="s0Devam()">Devam Et →</button>
     </div>
     <div style="text-align:center;padding:8px 0 4px;border-top:1px solid var(--border-light);margin-top:4px">
       <p style="font-size:10px;color:var(--text-hint);line-height:1.8">
-        Stok &amp; Lokasyon · Arvato Supply Chain Solutions<br>
+        Lean · Arvato Supply Chain Solutions<br>
         <span style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--border)">Analytics &amp; Reporting · Enes Çakar · 2026</span>
       </p>
     </div>
@@ -111,9 +109,7 @@ input:focus,textarea:focus,select:focus{border-color:var(--ins);background:#fff;
   </div>
   <div class="body">
     <div class="step-indicator">
-      <div class="step-dot active" id="dot1"></div>
-      <div class="step-dot" id="dot2"></div>
-      <div class="step-dot" id="dot3"></div>
+      <div class="step-dot active"></div><div class="step-dot"></div><div class="step-dot"></div>
     </div>
     <div class="card">
       <div class="card-label">Hangi platformdasınız?</div>
@@ -130,9 +126,7 @@ input:focus,textarea:focus,select:focus{border-color:var(--ins);background:#fff;
   </div>
   <div class="body">
     <div class="step-indicator">
-      <div class="step-dot done"></div>
-      <div class="step-dot active"></div>
-      <div class="step-dot"></div>
+      <div class="step-dot done"></div><div class="step-dot active"></div><div class="step-dot"></div>
     </div>
     <div class="card">
       <div class="card-label">Alan</div>
@@ -148,14 +142,18 @@ input:focus,textarea:focus,select:focus{border-color:var(--ins);background:#fff;
       <textarea id="aciklama" placeholder="Sorunu kısaca açıklayın..." rows="4"></textarea>
     </div>
     <div class="card">
-      <div class="card-label">Fotoğraf <span style="font-size:9px;font-weight:400;color:var(--text-hint)">(önerilir)</span></div>
-      <div id="fotoArea">
+      <div class="card-label" style="display:flex;justify-content:space-between;align-items:center">
+        <span>Fotoğraf <span style="font-size:9px;font-weight:400;color:var(--text-hint)">(önerilir, maks 4)</span></span>
+        <span id="fotoSayac" style="font-size:10px;font-family:'JetBrains Mono',monospace;color:var(--text-hint)">0/4</span>
+      </div>
+      <div id="fotoGrid" style="display:flex;flex-direction:column;gap:6px;margin-bottom:8px"></div>
+      <div id="fotoEkleBtn">
         <div class="foto-upload" onclick="document.getElementById('fotoInput').click()">
-          <div style="width:52px;height:52px;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;border:2px solid var(--ins-mid)">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--ins)" stroke-width="1.5"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
+          <div style="width:44px;height:44px;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;border:2px solid var(--border)">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--arvato)" stroke-width="1.5"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
           </div>
-          <div style="font-size:13px;font-weight:600;color:var(--ins)">Fotoğraf Çek / Seç</div>
-          <div style="font-size:11px;color:var(--text-hint)">Fotoğraf eklemek süreci hızlandırır</div>
+          <div style="font-size:12px;font-weight:600;color:var(--arvato)">Fotoğraf Ekle</div>
+          <div style="font-size:10px;color:var(--text-hint)">Süreci hızlandırır</div>
         </div>
       </div>
       <input type="file" id="fotoInput" accept="image/*" style="display:none" onchange="fotoSec(this)">
@@ -172,17 +170,15 @@ input:focus,textarea:focus,select:focus{border-color:var(--ins);background:#fff;
   </div>
   <div class="body">
     <div class="step-indicator">
-      <div class="step-dot done"></div>
-      <div class="step-dot done"></div>
-      <div class="step-dot active"></div>
+      <div class="step-dot done"></div><div class="step-dot done"></div><div class="step-dot active"></div>
     </div>
-    <div class="card" style="background:var(--ins-light);border-color:var(--ins-mid)">
-      <div class="card-label" style="color:var(--ins-dark)">Özet</div>
+    <div class="card" style="background:var(--arvato-light);border-color:#C5DDF6">
+      <div class="card-label" style="color:var(--arvato)">Özet</div>
       <div id="ozetKart" style="font-size:12px;color:var(--text);line-height:1.8"></div>
     </div>
     <div class="card">
       <div class="card-label">Departman <span style="font-size:9px;font-weight:400;color:var(--red)">*Zorunlu</span></div>
-      <div class="dept-grid" id="deptGrid">
+      <div class="dept-grid">
         <button class="dept-btn" data-val="Teknik Hizmetler" onclick="selDept(this)">Teknik<br>Hizmetler</button>
         <button class="dept-btn" data-val="İdari İşler" onclick="selDept(this)">İdari<br>İşler</button>
         <button class="dept-btn" data-val="Operasyon" onclick="selDept(this)">Operasyon</button>
@@ -233,59 +229,40 @@ input:focus,textarea:focus,select:focus{border-color:var(--ins);background:#fff;
 const INS_URL='https://default659c3a90ec904772b772cebe2050a8.2e.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/601553dc4c054ad0929e8850f51ab64a/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=7_NCNi4nBdferHP_SmU2_f0W9nwV0diRzhiVjfsfTNY';
 
 const PL={"P01":"Mercedes","P02":"Platform C","P03":"Platform L","P04":"Platform L2","P05":"Platform L3 - Mango","P06":"Platform L3 - H&M B2B","P08":"Platform M3","P09":"Platform S","P10":"Platform S2","P11":"Platform X"};
+const ALANLAR=['Mal Kabul','Mezzanine','Paketleme','Yüksek Raf','Akü Şarj Alanı','İade','Sevkiyat','Rampa','Koridor / Geçiş','Ofis Alanı','Dış Cephe','Genel Alan'];
 
-const ALANLAR=[
-  'Mal Kabul','Mezzanine','Paketleme','Yüksek Raf',
-  'Akü Şarj Alanı','İade','Sevkiyat','Rampa',
-  'Koridor / Geçiş','Ofis Alanı','Dış Cephe','Genel Alan'
-];
+let ins={bildirenKisi:'',platformID:'',platformAdi:'',alan:'',aciklama:'',dept:'',oncelik:'Orta',fotolar:[]};
+const MAX_FOTO=4;
 
-let ins={
-  bildirenKisi:'',
-  platformID:'',platformAdi:'',
-  alan:'',aciklama:'',
-  dept:'',oncelik:'Orta',
-  fotoB64:'',fotoAdi:''
-};
-
-// ── S0 ──────────────────────────────────────────────────────
 function s0Devam(){
   ins.bildirenKisi=document.getElementById('bildirenAd').value.trim()||'Anonim';
-  // Platform listesini doldur
-  const list=document.getElementById('platList');
-  list.innerHTML='';
+  const list=document.getElementById('platList');list.innerHTML='';
   Object.entries(PL).forEach(([id,ad])=>{
-    const b=document.createElement('div');
-    b.className='platform-card';
+    const b=document.createElement('div');b.className='platform-card';
     b.innerHTML='<span class="pc-id">'+id+'</span><span class="pc-name">'+ad+'</span>';
-    b.onclick=()=>platSec(id,ad);
-    list.appendChild(b);
+    b.onclick=()=>platSec(id,ad);list.appendChild(b);
   });
   goScreen('s1');
 }
 
-// ── S1 ──────────────────────────────────────────────────────
 function platSec(id,ad){
   ins.platformID=id;ins.platformAdi=ad;
   document.getElementById('s2T').textContent=ad;
-  // Alan grid doldur
   const grid=document.getElementById('alanGrid');
-  grid.innerHTML=ALANLAR.map(a=>
-    '<button class="alan-btn'+(ins.alan===a?' sel':'')+'" onclick="selAlan(this)" data-val="'+a+'">'+a+'</button>'
-  ).join('');
+  grid.innerHTML=ALANLAR.map(a=>'<button class="alan-btn'+(ins.alan===a?' sel':'')+'" onclick="selAlan(this)" data-val="'+a+'">'+a+'</button>').join('');
   goScreen('s2');
 }
 
 function selAlan(btn){
   document.querySelectorAll('.alan-btn').forEach(b=>b.classList.remove('sel'));
-  btn.classList.add('sel');
-  ins.alan=btn.dataset.val;
+  btn.classList.add('sel');ins.alan=btn.dataset.val;
 }
 
-// ── FOTOĞRAF ────────────────────────────────────────────────
+// FOTOĞRAF - çoklu maks 4
 function fotoSec(inp){
   if(!inp.files||!inp.files[0])return;
-  const f=inp.files[0];ins.fotoAdi=f.name;
+  if(ins.fotolar.length>=MAX_FOTO){showToast('Maksimum 4 fotoğraf eklenebilir',1);return;}
+  const f=inp.files[0];inp.value='';
   showToast('Fotoğraf sıkıştırılıyor...');
   const reader=new FileReader();
   reader.onload=e=>{
@@ -293,169 +270,77 @@ function fotoSec(inp){
     img.onload=()=>{
       const MAX=800;let w=img.width,h=img.height;
       if(w>MAX||h>MAX){if(w>h){h=Math.round(h*MAX/w);w=MAX;}else{w=Math.round(w*MAX/h);h=MAX;}}
-      const canvas=document.createElement('canvas');
-      canvas.width=w;canvas.height=h;
+      const canvas=document.createElement('canvas');canvas.width=w;canvas.height=h;
       canvas.getContext('2d').drawImage(img,0,0,w,h);
-      ins.fotoB64=canvas.toDataURL('image/jpeg',0.70).split(',')[1];
-      const kb=Math.round(ins.fotoB64.length*0.75/1024);
-      document.getElementById('fotoArea').innerHTML=
-        '<div class="foto-ok">'
-        +'<span style="font-size:24px">📷</span>'
-        +'<div><div style="font-size:12px;font-weight:600;color:var(--green)">Fotoğraf eklendi ('+kb+'KB)</div>'
-        +'<div style="font-size:11px;color:var(--text-soft)">'+f.name+'</div></div>'
-        +'<button onclick="fotoCikar()" style="margin-left:auto;background:none;border:none;cursor:pointer;font-size:18px;color:var(--text-hint)">✕</button>'
-        +'</div>';
-      showToast('Fotoğraf eklendi ✓');
+      const b64=canvas.toDataURL('image/jpeg',0.70).split(',')[1];
+      const kb=Math.round(b64.length*0.75/1024);
+      ins.fotolar.push({b64,ad:f.name,kb});
+      renderFotoGrid();
+      showToast('Fotoğraf eklendi ('+kb+'KB) ✓');
     };
     img.src=e.target.result;
   };
   reader.readAsDataURL(f);
 }
 
-function fotoCikar(){
-  ins.fotoB64='';ins.fotoAdi='';
-  document.getElementById('fotoArea').innerHTML=
-    '<div class="foto-upload" onclick="document.getElementById(\'fotoInput\').click()">'
-    +'<div style="width:52px;height:52px;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;border:2px solid var(--ins-mid)">'
-    +'<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--ins)" stroke-width="1.5"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>'
-    +'</div><div style="font-size:13px;font-weight:600;color:var(--ins)">Fotoğraf Çek / Seç</div>'
-    +'</div>';
+function renderFotoGrid(){
+  const grid=document.getElementById('fotoGrid');
+  const ekleBtn=document.getElementById('fotoEkleBtn');
+  const sayac=document.getElementById('fotoSayac');
+  if(!grid)return;
+  if(sayac)sayac.textContent=ins.fotolar.length+'/'+MAX_FOTO;
+  grid.innerHTML=ins.fotolar.map((f,i)=>
+    '<div style="border-radius:8px;border:1.5px solid var(--green-mid);background:var(--green-light);padding:8px 10px;display:flex;align-items:center;gap:8px">'
+    +'<span style="font-size:18px">📷</span>'
+    +'<div style="flex:1;min-width:0">'
+    +'<div style="font-size:10px;font-weight:600;color:var(--green);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">'+f.ad+'</div>'
+    +'<div style="font-size:9px;color:var(--text-hint)">'+f.kb+'KB</div></div>'
+    +'<button onclick="fotoCikar('+i+')" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-hint)">✕</button>'
+    +'</div>'
+  ).join('');
+  if(ekleBtn)ekleBtn.style.display=ins.fotolar.length>=MAX_FOTO?'none':'';
 }
 
-// ── S2 DEVAM ────────────────────────────────────────────────
+function fotoCikar(idx){ins.fotolar.splice(idx,1);renderFotoGrid();}
+
 function s2Devam(){
   ins.alan=document.querySelector('.alan-btn.sel')?.dataset.val||ins.alan;
   if(!ins.alan){showToast('Lütfen alan seçin!',1);return;}
   const ac=document.getElementById('aciklama').value.trim();
   if(!ac){showToast('Lütfen sorun açıklaması girin!',1);return;}
   ins.aciklama=ac;
-  // Özet kartı güncelle
   document.getElementById('ozetKart').innerHTML=
     '<strong>Platform:</strong> '+ins.platformAdi+'<br>'
     +'<strong>Alan:</strong> '+ins.alan+'<br>'
     +'<strong>Açıklama:</strong> '+ins.aciklama.substring(0,80)+(ins.aciklama.length>80?'...':'')+'<br>'
-    +'<strong>Fotoğraf:</strong> '+(ins.fotoB64?'✅ Eklendi':'—');
+    +'<strong>Fotoğraf:</strong> '+(ins.fotolar.length>0?'✅ '+ins.fotolar.length+' adet':'—');
   goScreen('s3');
 }
 
-// ── S3 ──────────────────────────────────────────────────────
 function selDept(btn){
   document.querySelectorAll('.dept-btn').forEach(b=>b.classList.remove('sel'));
-  btn.classList.add('sel');
-  ins.dept=btn.dataset.val;
+  btn.classList.add('sel');ins.dept=btn.dataset.val;
   document.getElementById('deptHata').textContent='';
 }
 
 function selOnc(btn){
   document.querySelectorAll('.onc-btn').forEach(b=>b.classList.remove('sel'));
-  btn.classList.add('sel');
-  ins.oncelik=btn.dataset.val;
+  btn.classList.add('sel');ins.oncelik=btn.dataset.val;
 }
 
-// ── GÖNDER ──────────────────────────────────────────────────
 async function gonder(){
-  if(!ins.dept){
-    document.getElementById('deptHata').textContent='Lütfen departman seçin!';
-    showToast('Departman seçimi zorunlu!',1);
-    return;
-  }
-  const btn=document.getElementById('gondBtn');
-  btn.textContent='Gönderiliyor...';btn.disabled=true;
-
+  if(!ins.dept){document.getElementById('deptHata').textContent='Lütfen departman seçin!';showToast('Departman seçimi zorunlu!',1);return;}
+  const btn=document.getElementById('gondBtn');btn.textContent='Gönderiliyor...';btn.disabled=true;
   const now=new Date();
-  const insID=ins.platformID+'_'+now.getFullYear()+
-    String(now.getMonth()+1).padStart(2,'0')+
-    String(now.getDate()).padStart(2,'0')+'_'+
-    String(now.getHours()).padStart(2,'0')+
-    String(now.getMinutes()).padStart(2,'0')+
-    String(now.getSeconds()).padStart(2,'0');
-
+  const insID=ins.platformID+'_'+now.getFullYear()+String(now.getMonth()+1).padStart(2,'0')+String(now.getDate()).padStart(2,'0')+'_'+String(now.getHours()).padStart(2,'0')+String(now.getMinutes()).padStart(2,'0')+String(now.getSeconds()).padStart(2,'0');
+  // İlk fotoğraf ana payload'a, diğerleri ayrıca gönderilecek
+  const ilkFoto=ins.fotolar.length>0?ins.fotolar[0].b64:'';
   const payload={
-    InsidenceID:insID,
-    PlatformID:ins.platformID,
-    PlatformAdi:ins.platformAdi,
-    Alan:ins.alan,
-    Aciklama:ins.aciklama,
-    AtananDepartman:ins.dept,
-    Oncelik:ins.oncelik,
-    BildirenKisi:ins.bildirenKisi,
-    BildirimTarihi:now.toISOString(),
-    FotoVarMi:ins.fotoB64!=='',
-    FotografBase64:ins.fotoB64||''
+    InsidenceID:insID,PlatformID:ins.platformID,PlatformAdi:ins.platformAdi,
+    Alan:ins.alan,Aciklama:ins.aciklama,AtananDepartman:ins.dept,Oncelik:ins.oncelik,
+    BildirenKisi:ins.bildirenKisi,BildirimTarihi:now.toISOString(),
+    FotoVarMi:ins.fotolar.length>0,FotografBase64:ilkFoto,
+    FotoSayisi:ins.fotolar.length
   };
-
   try{
-    const cleanJson=JSON.stringify(payload).replace(/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/g,'');
-    const r=await fetch(INS_URL,{
-      method:'POST',
-      headers:{'Content-Type':'application/json; charset=utf-8'},
-      body:cleanJson
-    });
-    if(r.ok||r.status===202){
-      // Başarı ekranı
-      document.getElementById('s4Msg').textContent=
-        ins.dept+' departmanına bildirim iletildi. En kısa sürede ilgilenilecektir.';
-      document.getElementById('s4Detay').innerHTML=
-        '<strong>Bildirim No:</strong> '+insID+'<br>'
-        +'<strong>Platform:</strong> '+ins.platformAdi+'<br>'
-        +'<strong>Alan:</strong> '+ins.alan+'<br>'
-        +'<strong>Departman:</strong> '+ins.dept+'<br>'
-        +'<strong>Öncelik:</strong> '+ins.oncelik+'<br>'
-        +'<strong>Bildiren:</strong> '+ins.bildirenKisi+'<br>'
-        +'<strong>Tarih:</strong> '+now.toLocaleString('tr-TR');
-      document.getElementById('s4InsID').textContent='ID: '+insID;
-      goScreen('s4');
-    } else {
-      const errText=await r.text().catch(()=>'');
-      console.error('Flow hatası',r.status,errText);
-      btn.textContent='Hata: '+r.status;btn.disabled=false;
-      showToast('Gönderim hatası: HTTP '+r.status,1);
-    }
-  }catch(e){
-    console.error('Fetch hatası:',e);
-    btn.textContent='Bildirimi Gönder ✓';btn.disabled=false;
-    showToast('Bağlantı hatası: '+e.message.substring(0,40),1);
-  }
-}
-
-function yeniBildirim(){
-  ins={bildirenKisi:ins.bildirenKisi,platformID:'',platformAdi:'',alan:'',aciklama:'',dept:'',oncelik:'Orta',fotoB64:'',fotoAdi:''};
-  document.getElementById('aciklama').value='';
-  document.getElementById('fotoArea').innerHTML='<div class="foto-upload" onclick="document.getElementById(\'fotoInput\').click()"><div style="width:52px;height:52px;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;border:2px solid var(--ins-mid)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--ins)" stroke-width="1.5"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg></div><div style="font-size:13px;font-weight:600;color:var(--ins)">Fotoğraf Çek / Seç</div></div>';
-  document.querySelectorAll('.dept-btn').forEach(b=>b.classList.remove('sel'));
-  document.querySelectorAll('.onc-btn').forEach(b=>b.classList.remove('sel'));
-  document.querySelector('.onc-btn[data-val="Orta"]').classList.add('sel');
-  const gondBtn=document.getElementById('gondBtn');
-  if(gondBtn){gondBtn.textContent='Bildirimi Gönder ✓';gondBtn.disabled=false;}
-  goScreen('s1');
-}
-
-// ── SES ─────────────────────────────────────────────────────
-let _rec=null,_micOn=false;
-function toggleMic(){
-  if(!('webkitSpeechRecognition' in window||'SpeechRecognition' in window)){showToast('Tarayıcınız ses tanımayı desteklemiyor',1);return;}
-  if(_micOn){_rec&&_rec.stop();return;}
-  const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
-  _rec=new SR();_rec.lang='tr-TR';_rec.continuous=false;_rec.interimResults=false;
-  _rec.onstart=()=>{_micOn=true;document.getElementById('micBtn').style.background='#FEE2E2';document.getElementById('micIcon').textContent='🔴';document.getElementById('micTxt').textContent='Dinliyor...';};
-  _rec.onresult=e=>{const t=e.results[0][0].transcript;const ta=document.getElementById('aciklama');ta.value=(ta.value?ta.value+' ':'')+t;};
-  _rec.onend=()=>{_micOn=false;document.getElementById('micBtn').style.background='';document.getElementById('micIcon').textContent='🎤';document.getElementById('micTxt').textContent='Sesli';};
-  _rec.onerror=()=>{_micOn=false;showToast('Ses tanıma başarısız',1);document.getElementById('micIcon').textContent='🎤';document.getElementById('micTxt').textContent='Sesli';};
-  _rec.start();
-}
-
-// ── YARDIMCI ─────────────────────────────────────────────────
-function goScreen(id){
-  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  window.scrollTo(0,0);
-}
-
-function showToast(m,err){
-  const t=document.getElementById('toast');t.textContent=m;
-  t.className='show'+(err?' err':'');
-  clearTimeout(t._t);t._t=setTimeout(()=>{t.className='';},err?4500:3000);
-}
-</script>
-</body>
-</html>
+    const r=await fetch(INS_URL,{method:'POST',headers:{'Content-Type':'application/json; charset=utf-8'},body:JSON.stringify(payload).replace(/[
