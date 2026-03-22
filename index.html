@@ -3,61 +3,55 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>LENS · Insidence Bildirimi · Arvato</title>
+<title>LENS - Insidence Bildirimi - Arvato</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#0078BE">
 <style>
 :root{
   --arvato:#0078BE;--arvato-dark:#005A8E;--arvato-light:#E6F3FB;
   --green:#15803D;--green-light:#DCFCE7;--green-mid:#86EFAC;
   --red:#B91C1C;--red-light:#FEF0EE;--red-mid:#FCA5A5;
-  --amber:#B45309;--amber-light:#FEF3C7;
   --text:#0D1F2D;--text-soft:#64748B;--text-hint:#94A3B8;
   --bg:#F0F4F8;--surface:#FFFFFF;--border:#DDE3EC;--border-light:#EEF1F5;
   --r:12px;--rs:8px;
   --shadow:0 1px 3px rgba(0,40,100,.08),0 4px 12px rgba(0,40,100,.05);
 }
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
-body{font-family:'Inter',sans-serif;background:var(--bg);min-height:100vh;display:flex;align-items:flex-start;justify-content:center;padding:0}
-.app{width:100%;max-width:430px;min-height:100vh;background:var(--surface);display:flex;flex-direction:column;position:relative}
+body{font-family:Inter,sans-serif;background:var(--bg);min-height:100vh;display:flex;align-items:flex-start;justify-content:center}
+.app{width:100%;max-width:430px;min-height:100vh;background:var(--surface);display:flex;flex-direction:column}
 @media(min-width:500px){body{padding:24px 0 48px;background:#1A2E44}.app{min-height:700px;border-radius:24px;box-shadow:0 32px 80px rgba(0,0,0,.3)}}
 .screen{display:none;flex-direction:column;flex:1;animation:fu .2s ease}
 .screen.active{display:flex}
 @keyframes fu{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 .topbar{background:var(--arvato);padding:14px 16px 12px;display:flex;align-items:center;gap:12px;flex-shrink:0}
-.topbar-back{width:32px;height:32px;background:rgba(255,255,255,.15);border:none;border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.topbar-back:hover{background:rgba(255,255,255,.25)}
-.topbar-info{flex:1;min-width:0}
+.topbar-back{width:32px;height:32px;background:rgba(255,255,255,.15);border:none;border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.topbar-info{flex:1}
 .topbar-title{font-size:14px;font-weight:600;color:#fff}
 .topbar-sub{font-size:10px;color:rgba(255,255,255,.6);margin-top:1px}
 .body{flex:1;padding:14px;display:flex;flex-direction:column;gap:10px;overflow-y:auto}
 .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;box-shadow:var(--shadow)}
 .card-label{font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--text-soft);margin-bottom:10px}
-input,textarea,select{font-family:'Inter',sans-serif;font-size:13px;color:var(--text);background:var(--bg);border:1px solid var(--border);border-radius:var(--rs);padding:11px 13px;width:100%;outline:none;transition:all .2s}
-input:focus,textarea:focus,select:focus{border-color:var(--arvato);background:#fff;box-shadow:0 0 0 3px rgba(0,120,190,.1)}
+input,textarea,select{font-family:Inter,sans-serif;font-size:13px;color:var(--text);background:var(--bg);border:1px solid var(--border);border-radius:var(--rs);padding:11px 13px;width:100%;outline:none;transition:all .2s}
+input:focus,textarea:focus{border-color:var(--arvato);background:#fff;box-shadow:0 0 0 3px rgba(0,120,190,.1)}
 .platform-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .platform-card{background:var(--bg);border:1.5px solid var(--border);border-radius:var(--r);padding:12px 10px;cursor:pointer;text-align:center;transition:all .15s;display:flex;flex-direction:column;align-items:center;gap:5px}
-.platform-card:hover{border-color:var(--arvato);background:var(--arvato-light);transform:translateY(-1px)}
-.platform-card .pc-id{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;color:#fff;background:var(--arvato);padding:2px 8px;border-radius:99px}
+.platform-card:hover{border-color:var(--arvato);background:var(--arvato-light)}
+.platform-card .pc-id{font-family:JetBrains Mono,monospace;font-size:10px;font-weight:700;color:#fff;background:var(--arvato);padding:2px 8px;border-radius:99px}
 .platform-card .pc-name{font-size:11px;font-weight:600;color:var(--text);line-height:1.3}
 .alan-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
-.alan-btn{background:var(--bg);border:1.5px solid var(--border);border-radius:var(--rs);padding:10px 8px;cursor:pointer;text-align:center;font-family:'Inter',sans-serif;font-size:12px;font-weight:500;color:var(--text-soft);transition:all .15s}
+.alan-btn{background:var(--bg);border:1.5px solid var(--border);border-radius:var(--rs);padding:10px 8px;cursor:pointer;text-align:center;font-family:Inter,sans-serif;font-size:12px;font-weight:500;color:var(--text-soft);transition:all .15s}
 .alan-btn.sel{border-color:var(--arvato);background:var(--arvato-light);color:var(--arvato);font-weight:700}
 .dept-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px}
-.dept-btn{background:var(--bg);border:1.5px solid var(--border);border-radius:var(--rs);padding:9px 6px;cursor:pointer;text-align:center;font-family:'Inter',sans-serif;font-size:11px;font-weight:500;color:var(--text-soft);transition:all .15s;line-height:1.3}
+.dept-btn{background:var(--bg);border:1.5px solid var(--border);border-radius:var(--rs);padding:9px 6px;cursor:pointer;text-align:center;font-family:Inter,sans-serif;font-size:11px;font-weight:500;color:var(--text-soft);line-height:1.3;transition:all .15s}
 .dept-btn.sel{border-color:var(--arvato);background:var(--arvato-light);color:var(--arvato);font-weight:700}
 .onc-row{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:5px}
-.onc-btn{padding:8px 4px;border-radius:6px;border:1.5px solid var(--border);background:var(--bg);font-family:'Inter',sans-serif;font-size:11px;font-weight:600;cursor:pointer;color:var(--text-soft)}
+.onc-btn{padding:8px 4px;border-radius:6px;border:1.5px solid var(--border);background:var(--bg);font-family:Inter,sans-serif;font-size:11px;font-weight:600;cursor:pointer;color:var(--text-soft)}
 .onc-btn.sel{background:var(--arvato);border-color:var(--arvato);color:#fff}
 .onc-btn[data-val="Kritik"]{border-color:#B91C1C;color:#B91C1C}
 .onc-btn[data-val="Kritik"].sel{background:#B91C1C;border-color:#B91C1C;color:#fff}
-.foto-upload{border:2px dashed var(--border);border-radius:var(--r);padding:22px 20px;display:flex;flex-direction:column;align-items:center;gap:10px;background:var(--arvato-light);cursor:pointer;transition:all .15s}
-.foto-upload:hover{border-color:var(--arvato)}
-.btn{width:100%;padding:14px;border-radius:var(--rs);font-family:'Inter',sans-serif;font-size:14px;font-weight:600;cursor:pointer;border:none;transition:all .15s}
+.foto-upload{border:2px dashed var(--border);border-radius:var(--r);padding:22px 20px;display:flex;flex-direction:column;align-items:center;gap:10px;background:var(--arvato-light);cursor:pointer}
+.btn{width:100%;padding:14px;border-radius:var(--rs);font-family:Inter,sans-serif;font-size:14px;font-weight:600;cursor:pointer;border:none;transition:all .15s}
 .btn-primary{background:var(--arvato);color:#fff;box-shadow:0 4px 12px rgba(0,120,190,.3)}
-.btn-primary:hover{background:var(--arvato-dark)}
 .btn-primary:disabled{opacity:.5;cursor:not-allowed}
 .btn-secondary{background:var(--surface);color:var(--text);border:1px solid var(--border)}
 .step-indicator{display:flex;align-items:center;justify-content:center;gap:6px;padding:12px 0 4px}
@@ -73,56 +67,53 @@ input:focus,textarea:focus,select:focus{border-color:var(--arvato);background:#f
 <body>
 <div class="app">
 
-<!-- S0: BİLDİREN KİŞİ -->
 <div class="screen active" id="s0">
   <div style="background:var(--arvato);padding:40px 20px 28px;display:flex;flex-direction:column;align-items:center;gap:14px">
     <div style="background:#fff;border-radius:10px;padding:8px 20px"><span style="font-size:22px;font-weight:700;color:var(--arvato)">arvato</span></div>
     <div style="text-align:center">
       <div style="font-size:18px;font-weight:700;color:#fff">Insidence Bildirimi</div>
-      <div style="font-size:11px;color:rgba(255,255,255,.65);margin-top:4px">Anlık Sorun &amp; Arıza Bildirimi</div>
+      <div style="font-size:11px;color:rgba(255,255,255,.65);margin-top:4px">Anlik Sorun &amp; Ariza Bildirimi</div>
     </div>
     <div style="background:rgba(255,255,255,.15);border-radius:10px;padding:10px 16px;text-align:center">
       <div style="font-size:11px;color:rgba(255,255,255,.8)">Sahada bir sorun mu fark ettiniz?</div>
-      <div style="font-size:12px;color:#fff;font-weight:600;margin-top:3px">Fotoğrafla, hızlıca bildirin.</div>
+      <div style="font-size:12px;color:#fff;font-weight:600;margin-top:3px">Fotografla, hizlica bildirin.</div>
     </div>
   </div>
   <div class="body" style="justify-content:center">
     <div class="card">
-      <div class="card-label">Adınız Soyadınız</div>
-      <input type="text" id="bildirenAd" placeholder="Sicil no veya adınızı girin" style="margin-bottom:14px">
-      <button class="btn btn-primary" onclick="s0Devam()">Devam Et →</button>
+      <div class="card-label">Bildiren Kisi</div>
+      <input type="text" id="bildirenAd" placeholder="Sicil no veya adinizi girin" style="margin-bottom:14px">
+      <button class="btn btn-primary" id="s0Btn" onclick="s0Devam()">Devam Et</button>
     </div>
     <div style="text-align:center;padding:8px 0 4px;border-top:1px solid var(--border-light);margin-top:4px">
       <p style="font-size:10px;color:var(--text-hint);line-height:1.8">
-        Lean · Arvato Supply Chain Solutions<br>
-        <span style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--border)">Analytics &amp; Reporting · Enes Çakar · 2026</span>
+        Lean &middot; Arvato Supply Chain Solutions<br>
+        <span style="font-family:JetBrains Mono,monospace;font-size:9px;color:var(--border)">Analytics &amp; Reporting &middot; Enes Cakar &middot; 2026</span>
       </p>
     </div>
   </div>
 </div>
 
-<!-- S1: PLATFORM -->
 <div class="screen" id="s1">
   <div class="topbar">
     <button class="topbar-back" onclick="goScreen('s0')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg></button>
-    <div class="topbar-info"><div class="topbar-title">Platform Seç</div><div class="topbar-sub">Adım 1 / 3</div></div>
+    <div class="topbar-info"><div class="topbar-title">Platform Sec</div><div class="topbar-sub">Adim 1 / 3</div></div>
   </div>
   <div class="body">
     <div class="step-indicator">
       <div class="step-dot active"></div><div class="step-dot"></div><div class="step-dot"></div>
     </div>
     <div class="card">
-      <div class="card-label">Hangi platformdasınız?</div>
+      <div class="card-label">Hangi platformdasiniz?</div>
       <div class="platform-grid" id="platList"></div>
     </div>
   </div>
 </div>
 
-<!-- S2: DETAY -->
 <div class="screen" id="s2">
   <div class="topbar">
     <button class="topbar-back" onclick="goScreen('s1')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg></button>
-    <div class="topbar-info"><div class="topbar-title" id="s2T">Sorun Detayı</div><div class="topbar-sub">Adım 2 / 3</div></div>
+    <div class="topbar-info"><div class="topbar-title" id="s2T">Sorun Detayi</div><div class="topbar-sub">Adim 2 / 3</div></div>
   </div>
   <div class="body">
     <div class="step-indicator">
@@ -134,17 +125,17 @@ input:focus,textarea:focus,select:focus{border-color:var(--arvato);background:#f
     </div>
     <div class="card">
       <div class="card-label" style="display:flex;justify-content:space-between;align-items:center">
-        <span>Sorun Açıklaması</span>
+        <span>Sorun Aciklamasi</span>
         <button id="micBtn" onclick="toggleMic()" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 10px;cursor:pointer;font-size:11px;color:var(--text-soft);display:flex;align-items:center;gap:4px">
-          <span id="micIcon">🎤</span><span id="micTxt">Sesli</span>
+          <span id="micIcon">&#127908;</span><span id="micTxt">Sesli</span>
         </button>
       </div>
-      <textarea id="aciklama" placeholder="Sorunu kısaca açıklayın..." rows="4"></textarea>
+      <textarea id="aciklama" placeholder="Sorunu kisaca aciklayin..." rows="4"></textarea>
     </div>
     <div class="card">
       <div class="card-label" style="display:flex;justify-content:space-between;align-items:center">
-        <span>Fotoğraf <span style="font-size:9px;font-weight:400;color:var(--text-hint)">(önerilir, maks 4)</span></span>
-        <span id="fotoSayac" style="font-size:10px;font-family:'JetBrains Mono',monospace;color:var(--text-hint)">0/4</span>
+        <span>Fotograf <span style="font-size:9px;font-weight:400;color:var(--text-hint)">(max 4)</span></span>
+        <span id="fotoSayac" style="font-size:10px;font-family:JetBrains Mono,monospace;color:var(--text-hint)">0/4</span>
       </div>
       <div id="fotoGrid" style="display:flex;flex-direction:column;gap:6px;margin-bottom:8px"></div>
       <div id="fotoEkleBtn">
@@ -152,73 +143,71 @@ input:focus,textarea:focus,select:focus{border-color:var(--arvato);background:#f
           <div style="width:44px;height:44px;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;border:2px solid var(--border)">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--arvato)" stroke-width="1.5"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
           </div>
-          <div style="font-size:12px;font-weight:600;color:var(--arvato)">Fotoğraf Ekle</div>
-          <div style="font-size:10px;color:var(--text-hint)">Süreci hızlandırır</div>
+          <div style="font-size:12px;font-weight:600;color:var(--arvato)">Fotograf Ekle</div>
+          <div style="font-size:10px;color:var(--text-hint)">Sureci hizlandirir</div>
         </div>
       </div>
       <input type="file" id="fotoInput" accept="image/*" style="display:none" onchange="fotoSec(this)">
     </div>
-    <button class="btn btn-primary" onclick="s2Devam()">Devam Et →</button>
+    <button class="btn btn-primary" onclick="s2Devam()">Devam Et</button>
   </div>
 </div>
 
-<!-- S3: ATAMA -->
 <div class="screen" id="s3">
   <div class="topbar">
     <button class="topbar-back" onclick="goScreen('s2')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg></button>
-    <div class="topbar-info"><div class="topbar-title">Görev Atama</div><div class="topbar-sub">Adım 3 / 3</div></div>
+    <div class="topbar-info"><div class="topbar-title">Gorev Atama</div><div class="topbar-sub">Adim 3 / 3</div></div>
   </div>
   <div class="body">
     <div class="step-indicator">
       <div class="step-dot done"></div><div class="step-dot done"></div><div class="step-dot active"></div>
     </div>
     <div class="card" style="background:var(--arvato-light);border-color:#C5DDF6">
-      <div class="card-label" style="color:var(--arvato)">Özet</div>
+      <div class="card-label" style="color:var(--arvato)">Ozet</div>
       <div id="ozetKart" style="font-size:12px;color:var(--text);line-height:1.8"></div>
     </div>
     <div class="card">
-      <div class="card-label">Departman <span style="font-size:9px;font-weight:400;color:var(--red)">*Zorunlu</span></div>
+      <div class="card-label">Departman <span style="font-size:9px;color:var(--red)">*Zorunlu</span></div>
       <div class="dept-grid">
-        <button class="dept-btn" data-val="Teknik Hizmetler" onclick="selDept(this)">Teknik<br>Hizmetler</button>
-        <button class="dept-btn" data-val="İdari İşler" onclick="selDept(this)">İdari<br>İşler</button>
+        <button class="dept-btn" data-val="Teknik Hizmetler" onclick="selDept(this)">Teknik Hizmetler</button>
+        <button class="dept-btn" data-val="Idari Isler" onclick="selDept(this)">Idari Isler</button>
         <button class="dept-btn" data-val="Operasyon" onclick="selDept(this)">Operasyon</button>
-        <button class="dept-btn" data-val="İSG" onclick="selDept(this)">İSG</button>
+        <button class="dept-btn" data-val="ISG" onclick="selDept(this)">ISG</button>
         <button class="dept-btn" data-val="Kalite" onclick="selDept(this)">Kalite</button>
         <button class="dept-btn" data-val="Lean" onclick="selDept(this)">Lean</button>
-        <button class="dept-btn" data-val="Dağıtım" onclick="selDept(this)">Dağıtım</button>
+        <button class="dept-btn" data-val="Dagitim" onclick="selDept(this)">Dagitim</button>
         <button class="dept-btn" data-val="Antrepo" onclick="selDept(this)">Antrepo</button>
-        <button class="dept-btn" data-val="Güvenlik" onclick="selDept(this)">Güvenlik</button>
+        <button class="dept-btn" data-val="Guvenlik" onclick="selDept(this)">Guvenlik</button>
       </div>
       <div id="deptHata" style="font-size:11px;color:var(--red);margin-top:6px;min-height:16px"></div>
     </div>
     <div class="card">
-      <div class="card-label">Öncelik</div>
+      <div class="card-label">Oncelik</div>
       <div class="onc-row">
-        <button class="onc-btn" data-val="Düşük" onclick="selOnc(this)">Düşük</button>
+        <button class="onc-btn" data-val="Dusuk" onclick="selOnc(this)">Dusuk</button>
         <button class="onc-btn sel" data-val="Orta" onclick="selOnc(this)">Orta</button>
-        <button class="onc-btn" data-val="Yüksek" onclick="selOnc(this)">Yüksek</button>
+        <button class="onc-btn" data-val="Yuksek" onclick="selOnc(this)">Yuksek</button>
         <button class="onc-btn" data-val="Kritik" onclick="selOnc(this)">Kritik</button>
       </div>
     </div>
-    <button class="btn btn-primary" id="gondBtn" onclick="gonder()">Bildirimi Gönder ✓</button>
-    <button class="btn btn-secondary" onclick="goScreen('s2')" style="margin-top:-2px">Geri Dön</button>
+    <button class="btn btn-primary" id="gondBtn" onclick="gonder()">Bildirimi Gonder</button>
+    <button class="btn btn-secondary" onclick="goScreen('s2')" style="margin-top:-2px">Geri Don</button>
   </div>
 </div>
 
-<!-- S4: BAŞARILI -->
 <div class="screen" id="s4">
   <div class="body" style="justify-content:center;align-items:center;text-align:center;gap:16px">
-    <div class="success-icon">✅</div>
+    <div class="success-icon">&#9989;</div>
     <div>
-      <div style="font-size:20px;font-weight:700;color:var(--green);margin-bottom:6px">Bildirim Gönderildi!</div>
+      <div style="font-size:20px;font-weight:700;color:var(--green);margin-bottom:6px">Bildirim Gonderildi!</div>
       <div style="font-size:13px;color:var(--text-soft);line-height:1.6" id="s4Msg"></div>
     </div>
     <div class="card" style="width:100%;text-align:left">
-      <div class="card-label">Bildirim Özeti</div>
+      <div class="card-label">Bildirim Ozeti</div>
       <div id="s4Detay" style="font-size:12px;color:var(--text);line-height:1.9"></div>
     </div>
     <button class="btn btn-primary" onclick="yeniBildirim()" style="width:100%">Yeni Bildirim</button>
-    <div style="font-size:11px;color:var(--text-hint);margin-top:-4px" id="s4InsID"></div>
+    <div style="font-size:11px;color:var(--text-hint)" id="s4InsID"></div>
   </div>
 </div>
 
@@ -226,121 +215,253 @@ input:focus,textarea:focus,select:focus{border-color:var(--arvato);background:#f
 <div id="toast"></div>
 
 <script>
-const INS_URL='https://default659c3a90ec904772b772cebe2050a8.2e.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/601553dc4c054ad0929e8850f51ab64a/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=7_NCNi4nBdferHP_SmU2_f0W9nwV0diRzhiVjfsfTNY';
+var INS_URL = 'https://default659c3a90ec904772b772cebe2050a8.2e.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/601553dc4c054ad0929e8850f51ab64a/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=7_NCNi4nBdferHP_SmU2_f0W9nwV0diRzhiVjfsfTNY';
 
-const PL={"P01":"Mercedes","P02":"Platform C","P03":"Platform L","P04":"Platform L2","P05":"Platform L3 - Mango","P06":"Platform L3 - H&M B2B","P08":"Platform M3","P09":"Platform S","P10":"Platform S2","P11":"Platform X"};
-const ALANLAR=['Mal Kabul','Mezzanine','Paketleme','Yüksek Raf','Akü Şarj Alanı','İade','Sevkiyat','Rampa','Koridor / Geçiş','Ofis Alanı','Dış Cephe','Genel Alan'];
+var PL = {P01:"Mercedes",P02:"Platform C",P03:"Platform L",P04:"Platform L2",P05:"Platform L3 Mango",P06:"Platform L3 HM B2B",P08:"Platform M3",P09:"Platform S",P10:"Platform S2",P11:"Platform X"};
+var ALANLAR = ["Mal Kabul","Mezzanine","Paketleme","Yuksek Raf","Aku Sarj Alani","Iade","Sevkiyat","Rampa","Koridor","Ofis Alani","Dis Cephe","Genel Alan"];
+var MAX_FOTO = 4;
 
-let ins={bildirenKisi:'',platformID:'',platformAdi:'',alan:'',aciklama:'',dept:'',oncelik:'Orta',fotolar:[]};
-const MAX_FOTO=4;
+var ins = {bildirenKisi:"",platformID:"",platformAdi:"",alan:"",aciklama:"",dept:"",oncelik:"Orta",fotolar:[]};
 
-function s0Devam(){
-  ins.bildirenKisi=document.getElementById('bildirenAd').value.trim()||'Anonim';
-  const list=document.getElementById('platList');list.innerHTML='';
-  Object.entries(PL).forEach(([id,ad])=>{
-    const b=document.createElement('div');b.className='platform-card';
-    b.innerHTML='<span class="pc-id">'+id+'</span><span class="pc-name">'+ad+'</span>';
-    b.onclick=()=>platSec(id,ad);list.appendChild(b);
-  });
-  goScreen('s1');
+function s0Devam() {
+  var ad = document.getElementById("bildirenAd").value.trim();
+  ins.bildirenKisi = ad || "Anonim";
+  var list = document.getElementById("platList");
+  list.innerHTML = "";
+  for (var id in PL) {
+    (function(pid, padi) {
+      var b = document.createElement("div");
+      b.className = "platform-card";
+      b.innerHTML = '<span class="pc-id">' + pid + '</span><span class="pc-name">' + padi + '</span>';
+      b.onclick = function() { platSec(pid, padi); };
+      list.appendChild(b);
+    })(id, PL[id]);
+  }
+  goScreen("s1");
 }
 
-function platSec(id,ad){
-  ins.platformID=id;ins.platformAdi=ad;
-  document.getElementById('s2T').textContent=ad;
-  const grid=document.getElementById('alanGrid');
-  grid.innerHTML=ALANLAR.map(a=>'<button class="alan-btn'+(ins.alan===a?' sel':'')+'" onclick="selAlan(this)" data-val="'+a+'">'+a+'</button>').join('');
-  goScreen('s2');
+function platSec(id, ad) {
+  ins.platformID = id;
+  ins.platformAdi = ad;
+  document.getElementById("s2T").textContent = ad;
+  var grid = document.getElementById("alanGrid");
+  var html = "";
+  for (var i = 0; i < ALANLAR.length; i++) {
+    var sel = ins.alan === ALANLAR[i] ? " sel" : "";
+    html += '<button class="alan-btn' + sel + '" onclick="selAlan(this)" data-val="' + ALANLAR[i] + '">' + ALANLAR[i] + '</button>';
+  }
+  grid.innerHTML = html;
+  goScreen("s2");
 }
 
-function selAlan(btn){
-  document.querySelectorAll('.alan-btn').forEach(b=>b.classList.remove('sel'));
-  btn.classList.add('sel');ins.alan=btn.dataset.val;
+function selAlan(btn) {
+  var btns = document.querySelectorAll(".alan-btn");
+  for (var i = 0; i < btns.length; i++) btns[i].classList.remove("sel");
+  btn.classList.add("sel");
+  ins.alan = btn.getAttribute("data-val");
 }
 
-// FOTOĞRAF - çoklu maks 4
-function fotoSec(inp){
-  if(!inp.files||!inp.files[0])return;
-  if(ins.fotolar.length>=MAX_FOTO){showToast('Maksimum 4 fotoğraf eklenebilir',1);return;}
-  const f=inp.files[0];inp.value='';
-  showToast('Fotoğraf sıkıştırılıyor...');
-  const reader=new FileReader();
-  reader.onload=e=>{
-    const img=new Image();
-    img.onload=()=>{
-      const MAX=800;let w=img.width,h=img.height;
-      if(w>MAX||h>MAX){if(w>h){h=Math.round(h*MAX/w);w=MAX;}else{w=Math.round(w*MAX/h);h=MAX;}}
-      const canvas=document.createElement('canvas');canvas.width=w;canvas.height=h;
-      canvas.getContext('2d').drawImage(img,0,0,w,h);
-      const b64=canvas.toDataURL('image/jpeg',0.70).split(',')[1];
-      const kb=Math.round(b64.length*0.75/1024);
-      ins.fotolar.push({b64,ad:f.name,kb});
+function fotoSec(inp) {
+  if (!inp.files || !inp.files[0]) return;
+  if (ins.fotolar.length >= MAX_FOTO) { showToast("Maksimum 4 fotograf eklenebilir", 1); return; }
+  var f = inp.files[0];
+  inp.value = "";
+  showToast("Fotograf sikistiriliyor...");
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    var img = new Image();
+    img.onload = function() {
+      var MAX = 800, w = img.width, h = img.height;
+      if (w > MAX || h > MAX) { if (w > h) { h = Math.round(h * MAX / w); w = MAX; } else { w = Math.round(w * MAX / h); h = MAX; } }
+      var canvas = document.createElement("canvas");
+      canvas.width = w; canvas.height = h;
+      canvas.getContext("2d").drawImage(img, 0, 0, w, h);
+      var b64 = canvas.toDataURL("image/jpeg", 0.70).split(",")[1];
+      var kb = Math.round(b64.length * 0.75 / 1024);
+      ins.fotolar.push({b64: b64, ad: f.name, kb: kb});
       renderFotoGrid();
-      showToast('Fotoğraf eklendi ('+kb+'KB) ✓');
+      showToast("Fotograf eklendi (" + kb + "KB)");
     };
-    img.src=e.target.result;
+    img.src = e.target.result;
   };
   reader.readAsDataURL(f);
 }
 
-function renderFotoGrid(){
-  const grid=document.getElementById('fotoGrid');
-  const ekleBtn=document.getElementById('fotoEkleBtn');
-  const sayac=document.getElementById('fotoSayac');
-  if(!grid)return;
-  if(sayac)sayac.textContent=ins.fotolar.length+'/'+MAX_FOTO;
-  grid.innerHTML=ins.fotolar.map((f,i)=>
-    '<div style="border-radius:8px;border:1.5px solid var(--green-mid);background:var(--green-light);padding:8px 10px;display:flex;align-items:center;gap:8px">'
-    +'<span style="font-size:18px">📷</span>'
-    +'<div style="flex:1;min-width:0">'
-    +'<div style="font-size:10px;font-weight:600;color:var(--green);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">'+f.ad+'</div>'
-    +'<div style="font-size:9px;color:var(--text-hint)">'+f.kb+'KB</div></div>'
-    +'<button onclick="fotoCikar('+i+')" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-hint)">✕</button>'
-    +'</div>'
-  ).join('');
-  if(ekleBtn)ekleBtn.style.display=ins.fotolar.length>=MAX_FOTO?'none':'';
+function renderFotoGrid() {
+  var grid = document.getElementById("fotoGrid");
+  var ekleBtn = document.getElementById("fotoEkleBtn");
+  var sayac = document.getElementById("fotoSayac");
+  if (!grid) return;
+  if (sayac) sayac.textContent = ins.fotolar.length + "/" + MAX_FOTO;
+  var html = "";
+  for (var i = 0; i < ins.fotolar.length; i++) {
+    html += '<div style="border-radius:8px;border:1.5px solid var(--green-mid);background:var(--green-light);padding:8px 10px;display:flex;align-items:center;gap:8px">'
+      + '<span style="font-size:18px">&#128247;</span>'
+      + '<div style="flex:1;min-width:0"><div style="font-size:10px;font-weight:600;color:var(--green)">' + ins.fotolar[i].ad + '</div>'
+      + '<div style="font-size:9px;color:var(--text-hint)">' + ins.fotolar[i].kb + 'KB</div></div>'
+      + '<button onclick="fotoCikar(' + i + ')" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-hint)">&#10005;</button>'
+      + '</div>';
+  }
+  grid.innerHTML = html;
+  if (ekleBtn) ekleBtn.style.display = ins.fotolar.length >= MAX_FOTO ? "none" : "";
 }
 
-function fotoCikar(idx){ins.fotolar.splice(idx,1);renderFotoGrid();}
-
-function s2Devam(){
-  ins.alan=document.querySelector('.alan-btn.sel')?.dataset.val||ins.alan;
-  if(!ins.alan){showToast('Lütfen alan seçin!',1);return;}
-  const ac=document.getElementById('aciklama').value.trim();
-  if(!ac){showToast('Lütfen sorun açıklaması girin!',1);return;}
-  ins.aciklama=ac;
-  document.getElementById('ozetKart').innerHTML=
-    '<strong>Platform:</strong> '+ins.platformAdi+'<br>'
-    +'<strong>Alan:</strong> '+ins.alan+'<br>'
-    +'<strong>Açıklama:</strong> '+ins.aciklama.substring(0,80)+(ins.aciklama.length>80?'...':'')+'<br>'
-    +'<strong>Fotoğraf:</strong> '+(ins.fotolar.length>0?'✅ '+ins.fotolar.length+' adet':'—');
-  goScreen('s3');
+function fotoCikar(idx) {
+  ins.fotolar.splice(idx, 1);
+  renderFotoGrid();
 }
 
-function selDept(btn){
-  document.querySelectorAll('.dept-btn').forEach(b=>b.classList.remove('sel'));
-  btn.classList.add('sel');ins.dept=btn.dataset.val;
-  document.getElementById('deptHata').textContent='';
+function s2Devam() {
+  var selBtn = document.querySelector(".alan-btn.sel");
+  if (selBtn) ins.alan = selBtn.getAttribute("data-val");
+  if (!ins.alan) { showToast("Lutfen alan secin!", 1); return; }
+  var ac = document.getElementById("aciklama").value.trim();
+  if (!ac) { showToast("Lutfen sorun aciklamasi girin!", 1); return; }
+  ins.aciklama = ac;
+  var fotoText = ins.fotolar.length > 0 ? ins.fotolar.length + " adet" : "-";
+  document.getElementById("ozetKart").innerHTML =
+    "<strong>Platform:</strong> " + ins.platformAdi + "<br>"
+    + "<strong>Alan:</strong> " + ins.alan + "<br>"
+    + "<strong>Aciklama:</strong> " + ins.aciklama.substring(0, 80) + "<br>"
+    + "<strong>Fotograf:</strong> " + fotoText;
+  goScreen("s3");
 }
 
-function selOnc(btn){
-  document.querySelectorAll('.onc-btn').forEach(b=>b.classList.remove('sel'));
-  btn.classList.add('sel');ins.oncelik=btn.dataset.val;
+function selDept(btn) {
+  var btns = document.querySelectorAll(".dept-btn");
+  for (var i = 0; i < btns.length; i++) btns[i].classList.remove("sel");
+  btn.classList.add("sel");
+  ins.dept = btn.getAttribute("data-val");
+  document.getElementById("deptHata").textContent = "";
 }
 
-async function gonder(){
-  if(!ins.dept){document.getElementById('deptHata').textContent='Lütfen departman seçin!';showToast('Departman seçimi zorunlu!',1);return;}
-  const btn=document.getElementById('gondBtn');btn.textContent='Gönderiliyor...';btn.disabled=true;
-  const now=new Date();
-  const insID=ins.platformID+'_'+now.getFullYear()+String(now.getMonth()+1).padStart(2,'0')+String(now.getDate()).padStart(2,'0')+'_'+String(now.getHours()).padStart(2,'0')+String(now.getMinutes()).padStart(2,'0')+String(now.getSeconds()).padStart(2,'0');
-  // İlk fotoğraf ana payload'a, diğerleri ayrıca gönderilecek
-  const ilkFoto=ins.fotolar.length>0?ins.fotolar[0].b64:'';
-  const payload={
-    InsidenceID:insID,PlatformID:ins.platformID,PlatformAdi:ins.platformAdi,
-    Alan:ins.alan,Aciklama:ins.aciklama,AtananDepartman:ins.dept,Oncelik:ins.oncelik,
-    BildirenKisi:ins.bildirenKisi,BildirimTarihi:now.toISOString(),
-    FotoVarMi:ins.fotolar.length>0,FotografBase64:ilkFoto,
-    FotoSayisi:ins.fotolar.length
+function selOnc(btn) {
+  var btns = document.querySelectorAll(".onc-btn");
+  for (var i = 0; i < btns.length; i++) btns[i].classList.remove("sel");
+  btn.classList.add("sel");
+  ins.oncelik = btn.getAttribute("data-val");
+}
+
+function gonder() {
+  if (!ins.dept) {
+    document.getElementById("deptHata").textContent = "Lutfen departman secin!";
+    showToast("Departman secimi zorunlu!", 1);
+    return;
+  }
+  var btn = document.getElementById("gondBtn");
+  btn.textContent = "Gonderiliyor...";
+  btn.disabled = true;
+  var now = new Date();
+  var pad = function(n) { return String(n).padStart(2, "0"); };
+  var insID = ins.platformID + "_" + now.getFullYear() + pad(now.getMonth()+1) + pad(now.getDate()) + "_" + pad(now.getHours()) + pad(now.getMinutes()) + pad(now.getSeconds());
+  var ilkFoto = ins.fotolar.length > 0 ? ins.fotolar[0].b64 : "";
+  var payload = {
+    InsidenceID: insID,
+    PlatformID: ins.platformID,
+    PlatformAdi: ins.platformAdi,
+    Alan: ins.alan,
+    Aciklama: ins.aciklama,
+    AtananDepartman: ins.dept,
+    Oncelik: ins.oncelik,
+    BildirenKisi: ins.bildirenKisi,
+    BildirimTarihi: now.toISOString(),
+    FotoVarMi: ins.fotolar.length > 0,
+    FotografBase64: ilkFoto,
+    FotoSayisi: ins.fotolar.length
   };
-  try{
-    const r=await fetch(INS_URL,{method:'POST',headers:{'Content-Type':'application/json; charset=utf-8'},body:JSON.stringify(payload).replace(/[
+  fetch(INS_URL, {
+    method: "POST",
+    headers: {"Content-Type": "application/json; charset=utf-8"},
+    body: JSON.stringify(payload)
+  }).then(function(r) {
+    if (r.ok || r.status === 202) {
+      document.getElementById("s4Msg").textContent = ins.dept + " departmanina bildirim iletildi.";
+      document.getElementById("s4Detay").innerHTML =
+        "<strong>Bildirim No:</strong> " + insID + "<br>"
+        + "<strong>Platform:</strong> " + ins.platformAdi + "<br>"
+        + "<strong>Alan:</strong> " + ins.alan + "<br>"
+        + "<strong>Departman:</strong> " + ins.dept + "<br>"
+        + "<strong>Oncelik:</strong> " + ins.oncelik + "<br>"
+        + "<strong>Fotograf:</strong> " + ins.fotolar.length + " adet<br>"
+        + "<strong>Bildiren:</strong> " + ins.bildirenKisi + "<br>"
+        + "<strong>Tarih:</strong> " + now.toLocaleString("tr-TR");
+      document.getElementById("s4InsID").textContent = "ID: " + insID;
+      goScreen("s4");
+    } else {
+      btn.textContent = "Hata: " + r.status;
+      btn.disabled = false;
+      showToast("Gonderim hatasi: HTTP " + r.status, 1);
+    }
+  }).catch(function(e) {
+    btn.textContent = "Bildirimi Gonder";
+    btn.disabled = false;
+    showToast("Baglanti hatasi", 1);
+  });
+}
+
+function yeniBildirim() {
+  ins = {bildirenKisi: ins.bildirenKisi, platformID:"", platformAdi:"", alan:"", aciklama:"", dept:"", oncelik:"Orta", fotolar:[]};
+  document.getElementById("aciklama").value = "";
+  renderFotoGrid();
+  var dbtns = document.querySelectorAll(".dept-btn");
+  for (var i = 0; i < dbtns.length; i++) dbtns[i].classList.remove("sel");
+  var obtns = document.querySelectorAll(".onc-btn");
+  for (var i = 0; i < obtns.length; i++) obtns[i].classList.remove("sel");
+  document.querySelector('.onc-btn[data-val="Orta"]').classList.add("sel");
+  var gb = document.getElementById("gondBtn");
+  if (gb) { gb.textContent = "Bildirimi Gonder"; gb.disabled = false; }
+  goScreen("s1");
+}
+
+var _rec = null, _micOn = false;
+function toggleMic() {
+  var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (!SR) { showToast("Tarayiciniz ses tanimayi desteklemiyor", 1); return; }
+  if (_micOn) { if (_rec) _rec.stop(); return; }
+  _rec = new SR();
+  _rec.lang = "tr-TR";
+  _rec.continuous = false;
+  _rec.interimResults = false;
+  _rec.onstart = function() {
+    _micOn = true;
+    document.getElementById("micBtn").style.background = "#FEE2E2";
+    document.getElementById("micIcon").textContent = "&#128308;";
+    document.getElementById("micTxt").textContent = "Dinliyor...";
+  };
+  _rec.onresult = function(e) {
+    var t = e.results[0][0].transcript;
+    var ta = document.getElementById("aciklama");
+    ta.value = (ta.value ? ta.value + " " : "") + t;
+  };
+  _rec.onend = function() {
+    _micOn = false;
+    document.getElementById("micBtn").style.background = "";
+    document.getElementById("micIcon").textContent = "&#127908;";
+    document.getElementById("micTxt").textContent = "Sesli";
+  };
+  _rec.onerror = function() {
+    _micOn = false;
+    showToast("Ses tanima basarisiz", 1);
+    document.getElementById("micIcon").textContent = "&#127908;";
+    document.getElementById("micTxt").textContent = "Sesli";
+  };
+  _rec.start();
+}
+
+function goScreen(id) {
+  var screens = document.querySelectorAll(".screen");
+  for (var i = 0; i < screens.length; i++) screens[i].classList.remove("active");
+  document.getElementById(id).classList.add("active");
+  window.scrollTo(0, 0);
+}
+
+function showToast(m, err) {
+  var t = document.getElementById("toast");
+  t.textContent = m;
+  t.className = "show" + (err ? " err" : "");
+  clearTimeout(t._t);
+  t._t = setTimeout(function() { t.className = ""; }, err ? 4500 : 3000);
+}
+</script>
+</body>
+</html>
