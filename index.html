@@ -72,23 +72,23 @@ input:focus,textarea:focus{border-color:var(--arvato);background:#fff;box-shadow
     <div style="background:#fff;border-radius:10px;padding:8px 20px"><span style="font-size:22px;font-weight:700;color:var(--arvato)">arvato</span></div>
     <div style="text-align:center">
       <div style="font-size:18px;font-weight:700;color:#fff">Insidence Bildirimi</div>
-      <div style="font-size:11px;color:rgba(255,255,255,.65);margin-top:4px">Anlik Sorun &amp; Ariza Bildirimi</div>
+      <div style="font-size:11px;color:rgba(255,255,255,.65);margin-top:4px">Anlık Sorun &amp; Arıza Bildirimi</div>
     </div>
     <div style="background:rgba(255,255,255,.15);border-radius:10px;padding:10px 16px;text-align:center">
       <div style="font-size:11px;color:rgba(255,255,255,.8)">Sahada bir sorun mu fark ettiniz?</div>
-      <div style="font-size:12px;color:#fff;font-weight:600;margin-top:3px">Fotografla, hizlica bildirin.</div>
+      <div style="font-size:12px;color:#fff;font-weight:600;margin-top:3px">Fotoğrafla, hızlıca bildirin.</div>
     </div>
   </div>
   <div class="body" style="justify-content:center">
     <div class="card">
-      <div class="card-label">Bildiren Kisi</div>
-      <input type="text" id="bildirenAd" placeholder="Sicil no veya adinizi girin" style="margin-bottom:14px">
+      <div class="card-label">Bildiren Kişi</div>
+      <input type="text" id="bildirenAd" placeholder="Sicil no veya adınızı girin" style="margin-bottom:14px">
       <button class="btn btn-primary" id="s0Btn" onclick="s0Devam()">Devam Et</button>
     </div>
     <div style="text-align:center;padding:8px 0 4px;border-top:1px solid var(--border-light);margin-top:4px">
       <p style="font-size:10px;color:var(--text-hint);line-height:1.8">
         Lean &middot; Arvato Supply Chain Solutions<br>
-        <span style="font-family:JetBrains Mono,monospace;font-size:9px;color:var(--border)">Analytics &amp; Reporting &middot; Enes Cakar &middot; 2026</span>
+        <span style="font-family:JetBrains Mono,monospace;font-size:9px;color:var(--border)">Analytics &amp; Reporting &middot; Enes Çakar &middot; 2026</span>
       </p>
     </div>
   </div>
@@ -97,14 +97,14 @@ input:focus,textarea:focus{border-color:var(--arvato);background:#fff;box-shadow
 <div class="screen" id="s1">
   <div class="topbar">
     <button class="topbar-back" onclick="goScreen('s0')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg></button>
-    <div class="topbar-info"><div class="topbar-title">Platform Sec</div><div class="topbar-sub">Adim 1 / 3</div></div>
+    <div class="topbar-info"><div class="topbar-title">Platform Seç</div><div class="topbar-sub">Adım 1 / 3</div></div>
   </div>
   <div class="body">
     <div class="step-indicator">
       <div class="step-dot active"></div><div class="step-dot"></div><div class="step-dot"></div>
     </div>
     <div class="card">
-      <div class="card-label">Hangi platformdasiniz?</div>
+      <div class="card-label">Hangi platformdasınız?</div>
       <div class="platform-grid" id="platList"></div>
     </div>
   </div>
@@ -113,7 +113,7 @@ input:focus,textarea:focus{border-color:var(--arvato);background:#fff;box-shadow
 <div class="screen" id="s2">
   <div class="topbar">
     <button class="topbar-back" onclick="goScreen('s1')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg></button>
-    <div class="topbar-info"><div class="topbar-title" id="s2T">Sorun Detayi</div><div class="topbar-sub">Adim 2 / 3</div></div>
+    <div class="topbar-info"><div class="topbar-title" id="s2T">Sorun Detayı</div><div class="topbar-sub">Adım 2 / 3</div></div>
   </div>
   <div class="body">
     <div class="step-indicator">
@@ -125,16 +125,16 @@ input:focus,textarea:focus{border-color:var(--arvato);background:#fff;box-shadow
     </div>
     <div class="card">
       <div class="card-label" style="display:flex;justify-content:space-between;align-items:center">
-        <span>Sorun Aciklamasi</span>
+        <span>Sorun Açıklaması</span>
         <button id="micBtn" onclick="toggleMic()" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 10px;cursor:pointer;font-size:11px;color:var(--text-soft);display:flex;align-items:center;gap:4px">
           <span id="micIcon">&#127908;</span><span id="micTxt">Sesli</span>
         </button>
       </div>
-      <textarea id="aciklama" placeholder="Sorunu kisaca aciklayin..." rows="4"></textarea>
+      <textarea id="aciklama" placeholder="Sorunu kısaca açıklayın..." rows="4"></textarea>
     </div>
     <div class="card">
       <div class="card-label" style="display:flex;justify-content:space-between;align-items:center">
-        <span>Fotograf <span style="font-size:9px;font-weight:400;color:var(--text-hint)">(max 4)</span></span>
+        <span>Fotoğraf <span style="font-size:9px;font-weight:400;color:var(--text-hint)">(maks 4)</span></span>
         <span id="fotoSayac" style="font-size:10px;font-family:JetBrains Mono,monospace;color:var(--text-hint)">0/4</span>
       </div>
       <div id="fotoGrid" style="display:flex;flex-direction:column;gap:6px;margin-bottom:8px"></div>
@@ -143,8 +143,8 @@ input:focus,textarea:focus{border-color:var(--arvato);background:#fff;box-shadow
           <div style="width:44px;height:44px;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;border:2px solid var(--border)">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--arvato)" stroke-width="1.5"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
           </div>
-          <div style="font-size:12px;font-weight:600;color:var(--arvato)">Fotograf Ekle</div>
-          <div style="font-size:10px;color:var(--text-hint)">Sureci hizlandirir</div>
+          <div style="font-size:12px;font-weight:600;color:var(--arvato)">Fotoğraf Ekle</div>
+          <div style="font-size:10px;color:var(--text-hint)">Süreci hızlandırır</div>
         </div>
       </div>
       <input type="file" id="fotoInput" accept="image/*" style="display:none" onchange="fotoSec(this)">
@@ -156,7 +156,7 @@ input:focus,textarea:focus{border-color:var(--arvato);background:#fff;box-shadow
 <div class="screen" id="s3">
   <div class="topbar">
     <button class="topbar-back" onclick="goScreen('s2')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg></button>
-    <div class="topbar-info"><div class="topbar-title">Gorev Atama</div><div class="topbar-sub">Adim 3 / 3</div></div>
+    <div class="topbar-info"><div class="topbar-title">Görev Atama</div><div class="topbar-sub">Adım 3 / 3</div></div>
   </div>
   <div class="body">
     <div class="step-indicator">
@@ -170,40 +170,40 @@ input:focus,textarea:focus{border-color:var(--arvato);background:#fff;box-shadow
       <div class="card-label">Departman <span style="font-size:9px;color:var(--red)">*Zorunlu</span></div>
       <div class="dept-grid">
         <button class="dept-btn" data-val="Teknik Hizmetler" onclick="selDept(this)">Teknik Hizmetler</button>
-        <button class="dept-btn" data-val="Idari Isler" onclick="selDept(this)">Idari Isler</button>
+        <button class="dept-btn" data-val="İdari İşler" onclick="selDept(this)">İdari İşler</button>
         <button class="dept-btn" data-val="Operasyon" onclick="selDept(this)">Operasyon</button>
-        <button class="dept-btn" data-val="ISG" onclick="selDept(this)">ISG</button>
+        <button class="dept-btn" data-val="İSG" onclick="selDept(this)">İSG</button>
         <button class="dept-btn" data-val="Kalite" onclick="selDept(this)">Kalite</button>
         <button class="dept-btn" data-val="Lean" onclick="selDept(this)">Lean</button>
-        <button class="dept-btn" data-val="Dagitim" onclick="selDept(this)">Dagitim</button>
+        <button class="dept-btn" data-val="Dağıtım" onclick="selDept(this)">Dağıtım</button>
         <button class="dept-btn" data-val="Antrepo" onclick="selDept(this)">Antrepo</button>
-        <button class="dept-btn" data-val="Guvenlik" onclick="selDept(this)">Guvenlik</button>
+        <button class="dept-btn" data-val="Güvenlik" onclick="selDept(this)">Güvenlik</button>
       </div>
       <div id="deptHata" style="font-size:11px;color:var(--red);margin-top:6px;min-height:16px"></div>
     </div>
     <div class="card">
-      <div class="card-label">Oncelik</div>
+      <div class="card-label">Öncelik</div>
       <div class="onc-row">
-        <button class="onc-btn" data-val="Dusuk" onclick="selOnc(this)">Dusuk</button>
+        <button class="onc-btn" data-val="Düşük" onclick="selOnc(this)">Düşük</button>
         <button class="onc-btn sel" data-val="Orta" onclick="selOnc(this)">Orta</button>
-        <button class="onc-btn" data-val="Yuksek" onclick="selOnc(this)">Yuksek</button>
+        <button class="onc-btn" data-val="Yüksek" onclick="selOnc(this)">Yüksek</button>
         <button class="onc-btn" data-val="Kritik" onclick="selOnc(this)">Kritik</button>
       </div>
     </div>
-    <button class="btn btn-primary" id="gondBtn" onclick="gonder()">Bildirimi Gonder</button>
-    <button class="btn btn-secondary" onclick="goScreen('s2')" style="margin-top:-2px">Geri Don</button>
+    <button class="btn btn-primary" id="gondBtn" onclick="gonder()">Bildirimi Gönder</button>
+    <button class="btn btn-secondary" onclick="goScreen('s2')" style="margin-top:-2px">Geri Dön</button>
   </div>
 </div>
 
 <div class="screen" id="s4">
   <div class="body" style="justify-content:center;align-items:center;text-align:center;gap:16px">
-    <div class="success-icon">&#9989;</div>
+    <div class="success-icon">✅</div>
     <div>
-      <div style="font-size:20px;font-weight:700;color:var(--green);margin-bottom:6px">Bildirim Gonderildi!</div>
+      <div style="font-size:20px;font-weight:700;color:var(--green);margin-bottom:6px">Bildirim Gönderildi!</div>
       <div style="font-size:13px;color:var(--text-soft);line-height:1.6" id="s4Msg"></div>
     </div>
     <div class="card" style="width:100%;text-align:left">
-      <div class="card-label">Bildirim Ozeti</div>
+      <div class="card-label">Bildirim Özeti</div>
       <div id="s4Detay" style="font-size:12px;color:var(--text);line-height:1.9"></div>
     </div>
     <button class="btn btn-primary" onclick="yeniBildirim()" style="width:100%">Yeni Bildirim</button>
@@ -217,8 +217,8 @@ input:focus,textarea:focus{border-color:var(--arvato);background:#fff;box-shadow
 <script>
 var INS_URL = 'https://default659c3a90ec904772b772cebe2050a8.2e.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/601553dc4c054ad0929e8850f51ab64a/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=7_NCNi4nBdferHP_SmU2_f0W9nwV0diRzhiVjfsfTNY';
 
-var PL = {P01:"Mercedes",P02:"Platform C",P03:"Platform L",P04:"Platform L2",P05:"Platform L3 Mango",P06:"Platform L3 HM B2B",P08:"Platform M3",P09:"Platform S",P10:"Platform S2",P11:"Platform X"};
-var ALANLAR = ["Mal Kabul","Mezzanine","Paketleme","Yuksek Raf","Aku Sarj Alani","Iade","Sevkiyat","Rampa","Koridor","Ofis Alani","Dis Cephe","Genel Alan"];
+var PL = {P01:"Mercedes",P02:"Platform C",P03:"Platform L",P04:"Platform L2",P05:"Platform L3 - Mango",P06:"Platform L3 - H&M B2B",P08:"Platform M3",P09:"Platform S",P10:"Platform S2",P11:"Platform X"};
+var ALANLAR = ["Mal Kabul","Mezzanine","Paketleme","Yüksek Raf","Akü Şarj Alanı","İade","Sevkiyat","Rampa","Koridor","Ofis Alani","Dış Cephe","Genel Alan"];
 var MAX_FOTO = 4;
 
 var ins = {bildirenKisi:"",platformID:"",platformAdi:"",alan:"",aciklama:"",dept:"",oncelik:"Orta",fotolar:[]};
@@ -263,10 +263,10 @@ function selAlan(btn) {
 
 function fotoSec(inp) {
   if (!inp.files || !inp.files[0]) return;
-  if (ins.fotolar.length >= MAX_FOTO) { showToast("Maksimum 4 fotograf eklenebilir", 1); return; }
+  if (ins.fotolar.length >= MAX_FOTO) { showToast("Maksimum 4 fotoğraf eklenebilir", 1); return; }
   var f = inp.files[0];
   inp.value = "";
-  showToast("Fotograf sikistiriliyor...");
+  showToast("Fotoğraf sıkıştırılıyor...");
   var reader = new FileReader();
   reader.onload = function(e) {
     var img = new Image();
@@ -280,7 +280,7 @@ function fotoSec(inp) {
       var kb = Math.round(b64.length * 0.75 / 1024);
       ins.fotolar.push({b64: b64, ad: f.name, kb: kb});
       renderFotoGrid();
-      showToast("Fotograf eklendi (" + kb + "KB)");
+      showToast("Fotoğraf eklendi (" + kb + "KB)");
     };
     img.src = e.target.result;
   };
@@ -314,16 +314,16 @@ function fotoCikar(idx) {
 function s2Devam() {
   var selBtn = document.querySelector(".alan-btn.sel");
   if (selBtn) ins.alan = selBtn.getAttribute("data-val");
-  if (!ins.alan) { showToast("Lutfen alan secin!", 1); return; }
+  if (!ins.alan) { showToast("Lütfen alan seçin!", 1); return; }
   var ac = document.getElementById("aciklama").value.trim();
-  if (!ac) { showToast("Lutfen sorun aciklamasi girin!", 1); return; }
+  if (!ac) { showToast("Lütfen sorun açıklaması girin!", 1); return; }
   ins.aciklama = ac;
   var fotoText = ins.fotolar.length > 0 ? ins.fotolar.length + " adet" : "-";
   document.getElementById("ozetKart").innerHTML =
     "<strong>Platform:</strong> " + ins.platformAdi + "<br>"
     + "<strong>Alan:</strong> " + ins.alan + "<br>"
-    + "<strong>Aciklama:</strong> " + ins.aciklama.substring(0, 80) + "<br>"
-    + "<strong>Fotograf:</strong> " + fotoText;
+    + "<strong>Açıklama:</strong> " + ins.aciklama.substring(0, 80) + "<br>"
+    + "<strong>Fotoğraf:</strong> " + fotoText;
   goScreen("s3");
 }
 
@@ -344,59 +344,100 @@ function selOnc(btn) {
 
 function gonder() {
   if (!ins.dept) {
-    document.getElementById("deptHata").textContent = "Lutfen departman secin!";
-    showToast("Departman secimi zorunlu!", 1);
+    document.getElementById("deptHata").textContent = "Lütfen departman seçin!";
+    showToast("Departman seçimi zorunlu!", 1);
     return;
   }
   var btn = document.getElementById("gondBtn");
-  btn.textContent = "Gonderiliyor...";
+  btn.textContent = "Gönderiliyor...";
   btn.disabled = true;
   var now = new Date();
   var pad = function(n) { return String(n).padStart(2, "0"); };
   var insID = ins.platformID + "_" + now.getFullYear() + pad(now.getMonth()+1) + pad(now.getDate()) + "_" + pad(now.getHours()) + pad(now.getMinutes()) + pad(now.getSeconds());
-  var ilkFoto = ins.fotolar.length > 0 ? ins.fotolar[0].b64 : "";
-  var payload = {
-    InsidenceID: insID,
-    PlatformID: ins.platformID,
-    PlatformAdi: ins.platformAdi,
-    Alan: ins.alan,
-    Aciklama: ins.aciklama,
-    AtananDepartman: ins.dept,
-    Oncelik: ins.oncelik,
-    BildirenKisi: ins.bildirenKisi,
-    BildirimTarihi: now.toISOString(),
-    FotoVarMi: ins.fotolar.length > 0,
-    FotografBase64: ilkFoto,
-    FotoSayisi: ins.fotolar.length
-  };
-  fetch(INS_URL, {
-    method: "POST",
-    headers: {"Content-Type": "application/json; charset=utf-8"},
-    body: JSON.stringify(payload)
-  }).then(function(r) {
-    if (r.ok || r.status === 202) {
-      document.getElementById("s4Msg").textContent = ins.dept + " departmanina bildirim iletildi.";
+
+  // Her fotoğraf için ayrı payload - sırayla gönder
+  var tumPayloadlar = [];
+  var fotoSayisi = ins.fotolar.length;
+
+  if (fotoSayisi === 0) {
+    // Fotoğrafsız tek gönderim
+    tumPayloadlar.push({
+      InsidenceID: insID,
+      PlatformID: ins.platformID,
+      PlatformAdi: ins.platformAdi,
+      Alan: ins.alan,
+      Aciklama: ins.aciklama,
+      AtananDepartman: ins.dept,
+      Oncelik: ins.oncelik,
+      BildirenKisi: ins.bildirenKisi,
+      BildirimTarihi: now.toISOString(),
+      FotoVarMi: false,
+      FotografBase64: "",
+      FotoIndex: 0,
+      FotoSayisi: 0
+    });
+  } else {
+    // Her fotoğraf için ayrı kayıt
+    for (var i = 0; i < fotoSayisi; i++) {
+      tumPayloadlar.push({
+        InsidenceID: insID,
+        PlatformID: ins.platformID,
+        PlatformAdi: ins.platformAdi,
+        Alan: ins.alan,
+        Aciklama: i === 0 ? ins.aciklama : "",
+        AtananDepartman: i === 0 ? ins.dept : ins.dept,
+        Oncelik: ins.oncelik,
+        BildirenKisi: ins.bildirenKisi,
+        BildirimTarihi: now.toISOString(),
+        FotoVarMi: true,
+        FotografBase64: ins.fotolar[i].b64,
+        FotoIndex: i,
+        FotoSayisi: fotoSayisi
+      });
+    }
+  }
+
+  // Sırayla gönder
+  var gonderSiradaki = function(idx) {
+    if (idx >= tumPayloadlar.length) {
+      // Hepsi gönderildi
+      document.getElementById("s4Msg").textContent = ins.dept + " departmanına bildirim iletildi.";
       document.getElementById("s4Detay").innerHTML =
         "<strong>Bildirim No:</strong> " + insID + "<br>"
         + "<strong>Platform:</strong> " + ins.platformAdi + "<br>"
         + "<strong>Alan:</strong> " + ins.alan + "<br>"
         + "<strong>Departman:</strong> " + ins.dept + "<br>"
-        + "<strong>Oncelik:</strong> " + ins.oncelik + "<br>"
-        + "<strong>Fotograf:</strong> " + ins.fotolar.length + " adet<br>"
+        + "<strong>Öncelik:</strong> " + ins.oncelik + "<br>"
+        + "<strong>Fotoğraf:</strong> " + fotoSayisi + " adet<br>"
         + "<strong>Bildiren:</strong> " + ins.bildirenKisi + "<br>"
         + "<strong>Tarih:</strong> " + now.toLocaleString("tr-TR");
       document.getElementById("s4InsID").textContent = "ID: " + insID;
       goScreen("s4");
-    } else {
-      btn.textContent = "Hata: " + r.status;
-      btn.disabled = false;
-      showToast("Gonderim hatasi: HTTP " + r.status, 1);
+      return;
     }
-  }).catch(function(e) {
-    btn.textContent = "Bildirimi Gonder";
-    btn.disabled = false;
-    showToast("Baglanti hatasi", 1);
-  });
+    if (tumPayloadlar.length > 1) {
+      btn.textContent = "Gönderiliyor... (" + (idx+1) + "/" + tumPayloadlar.length + ")";
+    }
+    fetch(INS_URL, {
+      method: "POST",
+      headers: {"Content-Type": "application/json; charset=utf-8"},
+      body: JSON.stringify(tumPayloadlar[idx])
+    }).then(function(r) {
+      if (r.ok || r.status === 202) {
+        gonderSiradaki(idx + 1);
+      } else {
+        btn.textContent = "Hata: " + r.status;
+        btn.disabled = false;
+        showToast("Gönderim hatası: HTTP " + r.status, 1);
+      }
+    }).catch(function(e) {
+      btn.textContent = "Bildirimi Gönder";
+      btn.disabled = false;
+      showToast("Bağlantı hatası", 1);
+    });
+  };
+
+  gonderSiradaki(0);
 }
 
 function yeniBildirim() {
@@ -409,14 +450,14 @@ function yeniBildirim() {
   for (var i = 0; i < obtns.length; i++) obtns[i].classList.remove("sel");
   document.querySelector('.onc-btn[data-val="Orta"]').classList.add("sel");
   var gb = document.getElementById("gondBtn");
-  if (gb) { gb.textContent = "Bildirimi Gonder"; gb.disabled = false; }
+  if (gb) { gb.textContent = "Bildirimi Gönder"; gb.disabled = false; }
   goScreen("s1");
 }
 
 var _rec = null, _micOn = false;
 function toggleMic() {
   var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
-  if (!SR) { showToast("Tarayiciniz ses tanimayi desteklemiyor", 1); return; }
+  if (!SR) { showToast("Tarayıcınız ses tanımayı desteklemiyor", 1); return; }
   if (_micOn) { if (_rec) _rec.stop(); return; }
   _rec = new SR();
   _rec.lang = "tr-TR";
@@ -441,7 +482,7 @@ function toggleMic() {
   };
   _rec.onerror = function() {
     _micOn = false;
-    showToast("Ses tanima basarisiz", 1);
+    showToast("Ses tanıma başarısız", 1);
     document.getElementById("micIcon").textContent = "&#127908;";
     document.getElementById("micTxt").textContent = "Sesli";
   };
